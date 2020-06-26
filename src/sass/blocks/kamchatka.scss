@@ -1,0 +1,74 @@
+.kamchatka {
+  width: 100%;
+  min-height: 868px;
+  @include indent();
+  background-color: #ffffff;
+  background-image: url("../../img/map_of_Russia.png");
+  background-repeat: no-repeat;
+  background-position: center top;
+  mix-blend-mode: difference;
+
+  @media (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+    background-image: url("../../img/map_of_Russia@2x.png");
+  }
+
+  position: relative;
+
+  &::after {
+    content: url("../../img/16.png");
+    position: absolute;
+    bottom: -10%;
+    right: 15%;
+    width: 191px;
+    height: 274px;
+  }
+
+  @media (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+    &::after {
+      content: url("../../img/16@2x.png");
+    }
+  }
+}
+
+.kamchatka__heading {
+  outline: 2px dashed red;
+  // font-family: Playfair Display;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 72px;
+  line-height: 1.3;
+  color: #000000;
+  @include indent();
+
+  max-width: 60%;
+  margin-top: 120px;
+  margin-left: 100px;
+  margin-bottom: 20px;
+  padding: 0.5em;
+  text-align: left;
+
+  position: relative;
+  z-index: 10;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 65%;
+    height: 0.5em;
+    bottom: 20%;
+    left: 0;
+    background-color: $base-color;
+    z-index: -1;
+  }
+
+}
+
+.kamchatka__text {
+  max-width: 30%;
+  margin-left: 100px;
+  // font-family: Noto Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 1.3;
+}

@@ -1,0 +1,46 @@
+.presentation {
+  width: 100%;
+  min-height: 730px;
+
+  @include flex();
+  justify-content: center;
+  align-items: center;
+  @include indent();
+
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 53px;
+    left: 50%;
+    width: 25px;
+    height: 25px;
+    border-left: 4px solid $base-color;
+    border-bottom: 4px solid $base-color;
+    transform: rotate(-45deg);
+    background-color: transparent;
+  }
+}
+
+.presentation__heading {
+  outline: 2px dashed crimson;
+  max-width: 40%;
+  @include indent();
+  padding: 0.5em;
+  // font-family: Playfair Display;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 72px;
+  line-height: 1.3;
+  color: #FFFFFF;
+
+  & span {
+    display: block;
+    // font-family: Noto Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 22px;
+  }
+}

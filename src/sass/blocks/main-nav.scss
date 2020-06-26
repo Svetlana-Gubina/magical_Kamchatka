@@ -1,0 +1,45 @@
+// .main-nav {
+//
+// }
+
+.main-nav__list {
+  @include list();
+  @include flex();
+  justify-content: space-between;
+  @include indent();
+
+}
+
+.main-nav__link {
+  color: #ffffff;
+  display: block;
+  padding: 0.5em;
+  text-decoration: none;
+  // font-family: Noto Sans;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1.3;
+
+  &:hover,
+  &:focus {
+    opacity: 0.5;
+  }
+
+  &:active {
+    opacity: 0.8;
+  }
+}
+
+.main-nav__link--active {
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 50%;
+    height: 4px;
+    bottom: 4px;
+    left: 0.5em;
+    background-color: $base-color;
+  }
+}
