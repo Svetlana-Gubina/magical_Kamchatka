@@ -1,19 +1,25 @@
 @font-face {
-  font-family: "";
-  src: local(""),
-  url('../fonts/.ttf') format('truetype'), url("../fonts/.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
+  font-family: "Playfair Display";
+  src: local("Playfair Display"),
+  url('../fonts/Playfair_Display/PlayfairDisplay-BlackItalic.ttf') format('truetype'), url("../fonts/Playfair_Display/PlayfairDisplay-BlackItalic.woff") format("woff");
+  font-weight: 900;
+  font-style: italic;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "";
-  src: local(""),
-  url('../fonts/.ttf') format('truetype'), url("../fonts/.woff") format("woff");
-  font-weight: normal;
+    font-family: 'Playfair Display';
+    src: local('Playfair Display Regular'), local('PlayfairDisplay-Regular'), url('../fonts/Playfair_Display/Playfairdisplayregular.woff2') format('woff2'), url('../fonts/Playfair_Display/Playfairdisplayregular.woff') format('woff'), url('../fonts/Playfair_Display/Playfairdisplayregular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+  font-family: 'Noto Sans';
+  src: local('Noto Sans'), local('NotoSans'), url('../fonts/Noto_Sans/notosans.woff2') format('woff2'), url('../fonts/Noto_Sans/notosans.woff') format('woff'), url('../fonts/Noto_Sans/notosans.ttf') format('truetype');
+  font-weight: 400;
   font-style: normal;
-  font-display: swap;
 }
 
 body {
@@ -24,7 +30,7 @@ body {
   min-width: $mobile-width;
   max-width: $desktop-width;
   color: black;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Noto Sans", Arial, Helvetica, sans-serif;
   font-size: 16px;
   line-height: 1.5;
   background-color: #ffffff;

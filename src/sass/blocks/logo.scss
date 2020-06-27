@@ -2,21 +2,16 @@
   width: 40px;
   height: 43px;
   @include indent();
+  margin: 2px;
   @include flex();
   justify-content: center;
   align-items: center;
-  outline: 2px dashed crimson;
-}
-
-.logo a {
-  @include indent();
-  margin: auto;
-  // padding: 0.5rem;
-
   color: #FFFFFF;
-  // font-family: Playfair Display;
+  font-family: "Playfair Display", serif;
   font-style: italic;
   font-weight: 900;
   font-size: 32px;
   line-height: 1.3x;
+  text-decoration: none;
 }
+

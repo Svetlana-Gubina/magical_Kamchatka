@@ -1,6 +1,6 @@
 .presentation {
   width: 100%;
-  min-height: 730px;
+  height: auto;
 
   @include flex();
   justify-content: center;
@@ -25,10 +25,11 @@
 
 .presentation__heading {
   outline: 2px dashed crimson;
-  max-width: 40%;
+  max-width: 45%;
   @include indent();
+  margin-top: 300px;
   padding: 0.5em;
-  // font-family: Playfair Display;
+  font-family: "Playfair Display", serif;
   font-style: normal;
   font-weight: normal;
   font-size: 72px;
@@ -37,7 +38,7 @@
 
   & span {
     display: block;
-    // font-family: Noto Sans;
+    font-family: "Noto Sans", Arial, Helvetica, sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 16px;

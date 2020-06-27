@@ -1,14 +1,18 @@
 .wrapper {
   width: 100%;
   min-width: $mobile-width;
-  height: auto;
+  height: 100vh;
   @include indent();
 
-  background-color: darkgrey;
+  background-color: #000000;
   background-image: url("../../img/ermine.jpg");
-  background-size: 100% 100%;
+  background-size: cover;
   background-repeat: no-repeat;
   mix-blend-mode: difference;
+
+  @media (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+    // background-image: url("");
+  }
 
   @include media-tablet {
     // width: 500px;
