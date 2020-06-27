@@ -3,6 +3,7 @@
   min-width: $mobile-width;
   height: 900px;
   @include indent();
+
   background-color: #000000;
   background-image: url("../../img/ermine.jpg");
   background-size: cover;
