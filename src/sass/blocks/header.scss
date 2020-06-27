@@ -3,7 +3,6 @@
   width: 100%;
   @include flex();
   justify-content: space-between;
-
   @include indent();
   padding: 2.7% 3%;
 }
