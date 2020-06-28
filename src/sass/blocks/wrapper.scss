@@ -1,6 +1,9 @@
 .wrapper {
   width: 100%;
+  max-width: $desktop-width;
   min-width: $mobile-width;
+  margin-left: auto;
+  margin-right: auto;
   height: 900px;
   @include indent();
 
@@ -14,8 +17,9 @@
     // background-image: url("");
   }
 
-  @include media-tablet {
-    // width: 500px;
+  @include media-max-tablet {
+    background-position: 50% 0;
   }
+
 }
 

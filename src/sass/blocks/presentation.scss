@@ -23,7 +23,7 @@
   &::after {
     content: "";
     position: absolute;
-    bottom: -170px;
+    bottom: -110%;
     left: 48%;
     width: 25px;
     height: 25px;
@@ -41,4 +41,37 @@
     font-size: 16px;
     line-height: 22px;
   }
+
+
+  @include media-custom(1430px) {
+    &::after {
+      bottom: -50%;
+    }
+  }
+
+  @include media-max-tablet {
+    max-width: 55%;
+    margin-right: auto;
+    margin-left: 6%;
+    margin-top: 395px;
+
+    &::after {
+      bottom: -70%;
+      left: 80%;
+    }
+  }
+
+  @include media-custom(600px) {
+    font-size: 62px;
+    max-width: 80%;
+    text-align: center;
+    margin-right: 0;
+    margin-left: 0;
+    margin-top: 345px;
+    &::after {
+      bottom: -140%;
+      left: 50%;
+    }
+  }
+
 }

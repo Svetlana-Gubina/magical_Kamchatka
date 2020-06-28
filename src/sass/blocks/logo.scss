@@ -13,5 +13,13 @@
   font-size: 32px;
   line-height: 1.3x;
   text-decoration: none;
+
+  @include mobile-to-tablet {
+    margin-bottom: 2%;
+  }
+
+  @include media-mobile {
+    margin-bottom: 5%;
+  }
 }
 

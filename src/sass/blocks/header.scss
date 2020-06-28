@@ -5,8 +5,17 @@
   // z-index: 50;
 
   width: 100%;
+  max-width: 100%;
   @include flex();
   justify-content: space-between;
   @include indent();
   padding: 2.7% 3%;
+
+  @include mobile-to-tablet {
+    flex-direction: column;
+  }
+
+  @include media-mobile {
+    flex-direction: column;
+  }
 }

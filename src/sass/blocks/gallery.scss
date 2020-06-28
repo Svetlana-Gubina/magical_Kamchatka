@@ -1,11 +1,13 @@
 .gallery {
   width: 100%;
+  max-width: 100%;
   @include indent();
   color: #FFFFFF;
   background-color: #000000;
 }
 
 .gallery__heading {
+  max-width: 100%;
   font-family: "Playfair Display", serif;
   font-style: normal;
   font-weight: normal;
@@ -14,10 +16,17 @@
   @include indent();
   padding: 0.5em;
   margin-left: 100px;
+
+  @include media-max-tablet {
+    font-size: 62px;
+    margin-left: 0;
+    margin-bottom: 5%;
+  }
 }
 
 .gallery__list {
   width: 100%;
+  max-width: 100%;
   @include indent();
   @include list();
   @include flex();
@@ -26,7 +35,8 @@
 .gallery__item {
   width: 480px;
   height: 391px;
-  // background-blend-mode: color, normal;
+  flex-grow: 1;
+  background-blend-mode: color, normal;
 }
 
 .gallery__item img {
