@@ -27,3 +27,14 @@ toggle.addEventListener("click", function(evt) {
   menu.classList.toggle("visually-hidden");
 });
 })();
+
+
+(function(){
+  const titleCancel = document.querySelector('.slider__slide-cancel');
+
+  titleCancel.addEventListener('click', function(evt) {
+    evt.preventDefault();
+    this.closest('.slider__slide-title').classList.add('hidden');
+  });
+
+})();

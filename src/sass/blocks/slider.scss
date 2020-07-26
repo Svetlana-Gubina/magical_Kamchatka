@@ -1,0 +1,183 @@
+.slider {
+  width: 100%;
+  max-width: 100%;
+  min-width: $mobile-width;
+  height: 100vh;
+  @include indent();
+  padding: 5% 18%;
+
+  @include media-max-tablet() {
+    padding: 15% 10%;
+  }
+}
+
+@media screen and (max-width: 1439px) {
+  .slider {
+    padding: 10%;
+  }
+}
+
+.slider__preview {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+
+  @include media-custom(768px) {
+    transform: translateY(50%);
+  }
+}
+
+.slider__preview-flex {
+  max-width: 100%;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  @include flex();
+
+  @include media-custom(768px) {
+    bottom: -50%;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @include media-custom(600px) {
+    bottom: -80%;
+  }
+
+  @include media-custom(380px) {
+    bottom: -100%;
+  }
+}
+
+.slider__preview img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  height: auto;
+}
+
+.slider__slide-title {
+  position: relative;
+  width: 367px;
+  color: #ffffff;
+  background-color: #000000;
+  @include indent();
+  padding: 12px;
+  margin-right: 20px;
+
+  @include media-max-tablet() {
+    width: 337px;
+    font-size: 10px;
+  }
+
+  @include media-custom(768px) {
+    margin-bottom: 10px;
+  }
+}
+
+.slider__nav {
+  min-width: 199px;
+  @include flex();
+  justify-content: space-between;
+  align-items: center;
+  @include indent();
+  padding: 12px;
+
+  @include media-max-tablet() {
+    min-width: 169px;
+    font-size: 10px;
+  }
+}
+
+.slider__slide-cancel {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 24px;
+  height: 24px;
+  border: none;
+  background-color: transparent;
+  @include indent();
+  cursor: pointer;
+}
+
+.slider__slide-cancel::before,
+.slider__slide-cancel::after {
+  content: "";
+  position: absolute;
+  top: 10%;
+  left: 40%;
+  width: 2px;
+  height: 20px;
+  background-color:  #ffffff;
+}
+
+.slider__slide-cancel::before,
+.slider__cancel::before {
+  transform: rotate(45deg);
+}
+
+.slider__slide-cancel::after,
+.slider__cancel::after {
+  transform: rotate(-45deg);
+}
+
+.slider__slide-text,
+.slider__count {
+  @include indent();
+  padding: 0.4em;
+}
+
+.slider__nav {
+  color: #ffffff;
+  background-color: #000000;
+  @include indent();
+  padding: 12px;
+}
+
+.slider__cancel {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.slider__cancel::before,
+.slider__cancel::after {
+  content: "";
+  position: absolute;
+  top: 10%;
+  left: 40%;
+  width: 2px;
+  height: 25px;
+  background-color:  #ffffff;
+}
+
+.slider__previous,
+.slider__next {
+  width: 15px;
+  height: 15px;
+  border: none;
+  border-top: 2px solid #ffffff;
+  box-shadow: 0 none;
+  font-size: 0;
+  background-color: transparent;
+  @include indent();
+  cursor: pointer;
+}
+
+.slider__previous {
+  margin-left: 20px;
+  border-left: 2px solid #ffffff;
+  transform: rotate(-45deg);
+}
+
+.slider__next {
+  margin-right: 20px;
+  border-right: 2px solid #ffffff;
+  transform: rotate(45deg);
+}
