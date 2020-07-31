@@ -8,6 +8,11 @@
       <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
       <link rel="stylesheet" href="css/normalize.min.css">
       <link rel="stylesheet" href="css/style.min.css">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+      <link rel="stylesheet" href="http://kenwheeler.github.io/slick/slick/slick-theme.css">
+      <script src='https://code.jquery.com/jquery-1.12.4.js'></script>
+      <script src='https://code.jquery.com/ui/1.12.1/jquery-ui.js'></script>
+      <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
    </head>
    <body>
       <div class="wrapper" id="main">
@@ -47,55 +52,53 @@
           <h2 class="gallery__heading">Галерея</h2>
           <ul class="gallery__list">
             <li class="gallery__item gallery__item--1">
-              <img src="img/17.jpg" width="480" height="391" alt="Winter partridge">
+              <img class="gallery__thumbnail" src="img/1.jpg" data-lazy="img/1.jpg" data-number="1" width="480" height="391" alt="Winter partridge">
             </li>
             <li class="gallery__item gallery__item--2">
-              <img src="img/2.jpg" width="480" height="391" alt="Kamchatka brown bear">
+              <img class="gallery__thumbnail" src="img/2.jpg" data-lazy="img/2.jpg" data-number="2" width="480" height="391" alt="Kamchatka brown bear">
             </li>
             <li class="gallery__item gallery__item--3">
-              <img src="img/21.jpg" width="480" height="391" alt="Eagle">
+              <img class="gallery__thumbnail" src="img/3.jpg" data-lazy="img/3.jpg" data-number="3" width="480" height="391" alt="Eagle">
             </li>
             <li class="gallery__item gallery__item--4">
-              <img src="img/18.jpg" width="480" height="391" alt="Ducks">
+              <img class="gallery__thumbnail" src="img/4.jpg" data-lazy="img/4.jpg" data-number="4" width="480" height="391" alt="Ducks">
             </li>
             <li class="gallery__item gallery__item--5">
-              <img src="img/20.jpg" width="480" height="391" alt="Ducks">
+              <img class="gallery__thumbnail" src="img/5.jpg" data-lazy="img/5.jpg" data-number="5" width="480" height="391" alt="Ducks">
             </li>
             <li class="gallery__item gallery__item--6">
-              <img src="img/22.jpg" width="480" height="391" alt="Lentils">
+              <img class="gallery__thumbnail" src="img/6.jpg" data-lazy="img/6.jpg" data-number="6" width="480" height="391" alt="Lentils">
             </li>
             <li class="gallery__item gallery__item--7">
-              <img src="img/15.jpg" width="480" height="391" alt="Ducks">
+              <img class="gallery__thumbnail" src="img/7.jpg" data-lazy="img/7.jpg" data-number="7" width="480" height="391" alt="Ducks">
             </li>
             <li class="gallery__item gallery__item--8">
-              <img src="img/4.jpg" width="480" height="391" alt="Butterfly">
+              <img class="gallery__thumbnail" src="img/8.jpg" data-lazy="img/8.jpg" data-number="8" width="480" height="391" alt="Butterfly">
             </li>
             <li class="gallery__item gallery__item--9">
-              <img src="img/8.jpg" width="480" height="391" alt="Spring partridge">
+              <img class="gallery__thumbnail" src="img/9.jpg" data-lazy="img/9.jpg" data-number="9" width="480" height="391" alt="Spring partridge">
             </li>
           </ul>
         </section>
       </main>
 
-      <section class="slider  overlay hidden">
+      <section class="slider overlay hidden">
         <h2 class="slider__title  visually-hidden">Просмотр фотографии</h2>
         <div class="slider__preview slider__slide">
-           <!-- Просмотр изображения -->
-            <img src="img/2.jpg" alt="Картинка" width="600" height="600">
-            <div class="slider__preview-flex">
 
+           <!-- Просмотр изображения -->
+
+            <div class="slider__preview-flex">
               <div class="slider__slide-title">
                 <p class="slider__slide-text">Привет медвед</p>
                 <p class="slider__slide-text">Авг. 2017</p>
                 <button type="button" class="slider__slide-cancel"></button>
               </div>
-
               <div class="slider__nav"><!-- кнопки "предыдущая" и "следующая" -->
                 <button type="button" class="slider__previous">Предыдущий</button>
-                <span class="slider__count">1 из 8</span>
+                <span class="slider__count"><span class="slider__count-num">1</span> из <span class="slider__count-total">9</span></span>
                 <button type="button" class="slider__next">Следующий</button>
               </div>
-
             </div>
         </div>
         <button type="button" class="slider__cancel"></button>
