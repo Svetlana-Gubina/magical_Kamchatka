@@ -30,148 +30,54 @@
   });
 })();
 
-(function () {
-  const HIDDEN_CLASS = "hidden";
-  const titleCancel = document.querySelector(".slider__slide-cancel");
-  const galleryList = document.querySelector(".gallery__list");
-  const slider = document.querySelector(".slider");
-  const slides = document.querySelectorAll(".gallery__thumbnail");
-  const preview = document.querySelector(".slider__preview");
-  const sliderCancel = document.querySelector(".slider__cancel");
-  const sliderCountNum = document.querySelector(".slider__count-num");
-  const sliderCountTotal = document.querySelector(".slider__count-total");
+// fancybox
 
-  const createElement = (template, className) => {
-    const newElement = document.createElement(`div`);
-    newElement.innerHTML = template;
-    newElement.classList.add(className);
-    return newElement;
-  };
-
-  const remove = (component) => {
-    component.getElement().remove();
-    component.removeElement();
-  };
-
-  const createSlidesMarkup = (slides) => {
-    return Array.from(slides)
-      .map((slide) =>
-        `
-     <div>
-     <img src="img/${slide.dataset.number}.jpg" width="480" height="391" alt="Ducks">
-     </div>`.trim()
-      )
-      .join(``);
-  };
-
-  titleCancel.addEventListener("click", function (evt) {
-    evt.preventDefault();
-    this.closest(".slider__slide-title").classList.add("hidden");
-  });
-
-  class SliderElement {
-    constructor(slides) {
-      this._element = null;
-      this._slides = slides;
-      this._slidesMarkup = createSlidesMarkup(this._slides);
+$('[data-fancybox="gallery"]').fancybox({
+  protect: true,
+  loop: true,
+  infobar: false,
+  arrows: false,
+  afterShow: function (instance, slide) {
+    // Tip: Each event passes useful information within the event object:
+    // Object containing references to interface elements
+    // (background, buttons, caption, etc)
+    // console.info( instance.$refs );
+    // Current slide options
+    // console.info(slide.opts);
+    // Clicked element
+    // console.info(slide.opts.$orig);
+    // Reference to DOM element of the slide
+    // console.info(slide.$slide);
+  },
+  afterLoad: function (instance, current) {
+    if (instance.group.length > 1 && current.$content) {
+      current.$content.append(
+        `<div class="slider__preview-flex">
+        <div class="slider__slide-title">
+          <p class="slider__slide-text">${
+            current.opts.$orig[0].children[0].alt
+          }</p>
+          <p class="slider__slide-text">${
+            current.opts.$orig[0].children[0].dataset.date
+          }</p>
+          <button type="button" class="slider__slide-cancel"></button>
+        </div>
+        <div class="slider__nav fancybox-navigation">
+          <a data-fancybox-prev class="slider__previous" href="javascript:;">Предыдущий</a>
+          <span class="slider__count"><span class="slider__count-num" data-fancybox-index>${
+            current.opts.index + 1
+          }</span> из <span data-fancybox-count class="slider__count-total">${
+          instance.group.length
+        }</span></span>
+          <a data-fancybox-next class="slider__next" href="javascript:;">Следующий</a>
+        </div>
+      </div>`
+      );
     }
-
-    getTemplate() {
-      return `${this._slidesMarkup}`;
-    }
-
-    getElement() {
-      if (!this._element) {
-        this._element = createElement(this.getTemplate(), "slick");
-      }
-      return this._element;
-    }
-
-    removeElement() {
-      if (this._element) {
-        this._element = null;
-      }
-      return this._element;
-    }
-
-    show() {
-      if (this._element) {
-        this._element.classList.remove(HIDDEN_CLASS);
-      }
-    }
-
-    hide() {
-      if (this._element) {
-        this._element.classList.add(HIDDEN_CLASS);
-      }
-    }
-  }
-
-  const sliderElement = new SliderElement(slides);
-
-  const openSlider = function () {
-    slider.classList.remove("hidden");
-    preview.prepend(sliderElement.getElement());
-  };
-
-  const hideSlider = function () {
-    slider.classList.add("hidden");
-    remove(sliderElement);
-    $(".slick").slick("unslick");
-  };
-
-  const onEscPressSliderClose = (evt) => {
-    if (evt.key === "Escape") {
-      hideSlider();
-    }
-  };
-
-  const pictureClickHandler = (evt) => {
-    let picture = evt.target;
-    let num = Number(picture.dataset.number) - 1;
-    openSlider();
-
-    sliderCountNum.textContent = num + 1;
-    sliderCountTotal.textContent = slides.length;
-
-    $(".slick").on("init", function () {
-      // TODO:
-      // adaptiveHeight
-    });
-
-    $(".slick").slick({
-      initialSlide: num,
-      prevArrow: $(".slider__previous"),
-      nextArrow: $(".slider__next"),
-      infinite: false,
-      speed: 500,
-      slidesToShow: 1,
-      adaptiveHeight: true,
-    });
-
-    $(".slick").on("afterChange", function () {
-      const currentSlide = $(".slick").slick("slickCurrentSlide");
-      sliderCountNum.textContent = currentSlide + 1;
-    });
-
-    $(".slick").on("click", function () {
-      $(".slick").slick("slickNext");
-    });
-
-    document.addEventListener("keydown", onEscPressSliderClose);
-    sliderCancel.addEventListener("click", hideSlider);
-
-    if (slider.classList.contains(HIDDEN_CLASS)) {
-      sliderCancel.removeEventListener("click", hideBigPicture);
-      document.removeEventListener("keydown", onEscPressSliderClose);
-    }
-  };
-
-  galleryList.addEventListener("click", function (evt) {
-    evt.preventDefault();
-    let target = evt.target;
-    if (target.classList.contains("gallery__thumbnail")) {
-      pictureClickHandler(evt);
-    }
-  });
-})();
+    // const titleCancel = document.querySelector(".slider__slide-cancel");
+    // titleCancel.addEventListener("click", function (evt) {
+    //   evt.preventDefault();
+    //   this.closest(".slider__slide-title").classList.add("hidden");
+    // });
+  },
+});
