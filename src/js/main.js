@@ -37,6 +37,18 @@ $('[data-fancybox="gallery"]').fancybox({
   loop: true,
   infobar: false,
   arrows: false,
+  afterShow: function (instance, slide) {
+    // Tip: Each event passes useful information within the event object:
+    // Object containing references to interface elements
+    // (background, buttons, caption, etc)
+    // console.info( instance.$refs );
+    // Current slide options
+    // console.info( slide.opts );
+    // Clicked element
+    // console.info( slide.opts.$orig );
+    // Reference to DOM element of the slide
+    // console.info( slide.$slide );
+  },
   afterLoad: function (instance, current) {
     if (instance.group.length > 1 && current.$content) {
       current.$content.append(
@@ -46,7 +58,7 @@ $('[data-fancybox="gallery"]').fancybox({
             current.opts.$orig[0].children[0].alt
           }</p>
           <p class="slider__slide-text">${
-            current.opts.$orig[0].children[0].dataset.date
+            current.opts.$orig[0].dataset.date
           }</p>
           <button data-close type="button" class="slider__slide-cancel"></button>
         </div>

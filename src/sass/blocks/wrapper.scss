@@ -15,12 +15,15 @@
   mix-blend-mode: difference;
 
   @media (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
-    // background-image: url("");
+    background-image: url("../../img/ermine@2x.jpg");
   }
 
   @include media-max-tablet {
-    background-position: 50% 0;
+    background-image: url("../../img/ermine-tablet.jpg");
+    background-position: 40% 0;
   }
 
+  @include media-mobile() {
+    background-image: url("../../img/ermine-mobile.jpg");
+  }
 }
-

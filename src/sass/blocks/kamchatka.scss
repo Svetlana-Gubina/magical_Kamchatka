@@ -32,6 +32,7 @@
 
   @include media-max-tablet {
     padding-top: 80px;
+    padding-bottom: 80px;
     margin-bottom: 6%;
     background-position: 100% 46%;
   }
@@ -89,6 +90,8 @@
 }
 
 .kamchatka__text {
+  @include indent();
+  padding: 0.5em;
   color: #000000;
   max-width: 33%;
   margin-left: 8.5%;
@@ -110,8 +113,11 @@
     font-size: 18px;
   }
 
-  @include media-mobile {
+  @include media-custom(420px) {
     max-width: 80%;
+  }
+
+  @include media-mobile {
     font-size: 16px;
     line-height: 1.5;
   }

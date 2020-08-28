@@ -75,6 +75,10 @@
 
 .footer__mail {
   font-size: 26px;
+
+  @include media-mobile() {
+    font-size: 20px;
+  }
 }
 
 .footer__copyright {
