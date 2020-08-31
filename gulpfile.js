@@ -147,9 +147,17 @@ exports.clean = clean;
 
 const copy = () => {
   return gulp
-    .src([dir.src + "fonts/**/*", dir.src + "img/**/*", dir.src + "*.ico"], {
-      base: dir.src,
-    })
+    .src(
+      [
+        dir.src + "js/**/*",
+        dir.src + "fonts/**/*",
+        dir.src + "img/**/*",
+        dir.src + "*.ico",
+      ],
+      {
+        base: dir.src,
+      }
+    )
     .pipe(gulp.dest(dir.build))
     .pipe(
       sync.stream({

@@ -4,15 +4,18 @@
   min-width: $mobile-width;
   margin-left: auto;
   margin-right: auto;
-  height: 900px;
+  min-height: 900px;
   @include indent();
 
   background-color: #000000;
-  background-image: url("../../img/ermine.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 0 35%;
-  mix-blend-mode: difference;
+}
+
+.no-webp .wrapper,
+.no-js .wrapper {
+  background-image: url("../../img/ermine.jpg");
 
   @media (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
     background-image: url("../../img/ermine@2x.jpg");
@@ -25,5 +28,22 @@
 
   @include media-mobile() {
     background-image: url("../../img/ermine-mobile.jpg");
+  }
+}
+
+.webp .wrapper {
+  background-image: url("../../img/ermine.webp");
+
+  @media (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+    background-image: url("../../img/ermine@2x.webp");
+  }
+
+  @include media-max-tablet {
+    background-image: url("../../img/ermine-tablet.webp");
+    background-position: 40% 0;
+  }
+
+  @include media-mobile() {
+    background-image: url("../../img/ermine-mobile.webp");
   }
 }

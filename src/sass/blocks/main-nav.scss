@@ -1,7 +1,8 @@
 .main-nav {
   @include indent();
-  margin-right: 2.5%;
-  position: relative;
+  margin-right: 0.5%;
+  margin-top: 5px;
+  // position: relative;
   @include flex();
   justify-content: center;
 }
@@ -106,7 +107,6 @@
 }
 
 .main-nav__toggle {
-  // display: none;
   position: absolute;
   top: -45px;
   right: 0;

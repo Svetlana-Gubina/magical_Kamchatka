@@ -16,7 +16,7 @@
   @include indent();
   @include flex();
   justify-content: space-between;
-  margin-bottom: 230px;
+  margin-bottom: 190px;
 
   @include media-max-tablet {
     flex-direction: column;
@@ -96,7 +96,7 @@
 
 .footer__flex {
   @include indent();
-  padding-top: 15px;
+  padding-top: 1.2em;
   @include flex();
   flex-direction: column;
   justify-content: center;
