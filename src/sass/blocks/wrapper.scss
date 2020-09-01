@@ -15,35 +15,35 @@
 
 .no-webp .wrapper,
 .no-js .wrapper {
-  background-image: url("../../img/ermine.jpg");
+  background-image: url("../img/ermine.jpg");
 
   @media (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
-    background-image: url("../../img/ermine@2x.jpg");
+    background-image: url("../img/ermine@2x.jpg");
   }
 
   @include media-max-tablet {
-    background-image: url("../../img/ermine-tablet.jpg");
+    background-image: url("../img/ermine-tablet.jpg");
     background-position: 40% 0;
   }
 
   @include media-mobile() {
-    background-image: url("../../img/ermine-mobile.jpg");
+    background-image: url("../img/ermine-mobile.jpg");
   }
 }
 
 .webp .wrapper {
-  background-image: url("../../img/ermine.webp");
+  background-image: url("../img/ermine.webp");
 
   @media (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
-    background-image: url("../../img/ermine@2x.webp");
+    background-image: url("../img/ermine@2x.webp");
   }
 
   @include media-max-tablet {
-    background-image: url("../../img/ermine-tablet.webp");
+    background-image: url("../img/ermine-tablet.webp");
     background-position: 40% 0;
   }
 
   @include media-mobile() {
-    background-image: url("../../img/ermine-mobile.webp");
+    background-image: url("../img/ermine-mobile.webp");
   }
 }
