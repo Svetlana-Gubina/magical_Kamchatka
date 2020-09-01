@@ -2,7 +2,7 @@
   @include indent();
   margin-right: 0.5%;
   margin-top: 5px;
-  // position: relative;
+  position: relative;
   @include flex();
   justify-content: center;
 }
@@ -62,7 +62,7 @@
       bottom: 4px;
       left: 0.5em;
       background-color: $base-color;
-      // isolation: isolate;
+      isolation: isolate;
     }
   }
 

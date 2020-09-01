@@ -32,30 +32,19 @@
 
 // fancybox
 
-$('[data-fancybox="gallery"]').fancybox({
-  protect: true,
-  loop: true,
-  infobar: false,
-  arrows: false,
-  afterShow: function (instance, slide) {
-    // Tip: Each event passes useful information within the event object:
-    // Object containing references to interface elements
-    // (background, buttons, caption, etc)
-    // console.info( instance.$refs );
-    // Current slide options
-    // console.info( slide.opts );
-    // Clicked element
-    // console.info( slide.opts.$orig );
-    // Reference to DOM element of the slide
-    // console.info( slide.$slide );
-  },
-  afterLoad: function (instance, current) {
-    if (instance.group.length > 1 && current.$content) {
-      current.$content.append(
-        `<div class="slider__preview-flex">
+$(document).ready(function () {
+  $('[data-fancybox="gallery"]').fancybox({
+    protect: true,
+    loop: true,
+    infobar: false,
+    arrows: false,
+    afterLoad: function (instance, current) {
+      if (instance.group.length > 1 && current.$content) {
+        current.$content.append(
+          `<div class="slider__preview-flex">
         <div class="slider__slide-title" data-title>
           <p class="slider__slide-text">${
-            current.opts.$orig[0].children[0].alt
+            current.opts.$orig[0].dataset.title
           }</p>
           <p class="slider__slide-text">${
             current.opts.$orig[0].dataset.date
@@ -67,18 +56,19 @@ $('[data-fancybox="gallery"]').fancybox({
           <span class="slider__count"><span class="slider__count-num" data-fancybox-index>${
             current.opts.index + 1
           }</span> из <span data-fancybox-count class="slider__count-total">${
-          instance.group.length
-        }</span></span>
+            instance.group.length
+          }</span></span>
           <a data-fancybox-next class="slider__next" href="javascript:;">Следующий</a>
         </div>
       </div>`
-      );
-    }
+        );
+      }
 
-    const btn = current.$slide.find(".slider__slide-cancel")[0];
-    btn.addEventListener("click", function (evt) {
-      evt.preventDefault();
-      this.closest(".slider__slide-title").classList.add("hidden");
-    });
-  },
+      const btn = current.$slide.find(".slider__slide-cancel")[0];
+      btn.addEventListener("click", function (evt) {
+        evt.preventDefault();
+        this.closest(".slider__slide-title").classList.add("hidden");
+      });
+    },
+  });
 });

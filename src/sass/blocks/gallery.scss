@@ -30,8 +30,6 @@
   @include indent();
   @include list();
   @include flex();
-  // display: grid;
-  // grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
 }
 
 .gallery__item {

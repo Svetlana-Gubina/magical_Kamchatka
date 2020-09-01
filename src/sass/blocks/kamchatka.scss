@@ -94,6 +94,7 @@
 .kamchatka__text {
   @include indent();
   padding: 0.5em;
+  padding-bottom: 2em;
   color: #000000;
   max-width: 33%;
   margin-left: 8.5%;

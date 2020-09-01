@@ -14,13 +14,10 @@
     />
     <link rel="stylesheet" href="css/normalize.min.css" />
     <link rel="stylesheet" href="css/style.min.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css"
-    />
+    <link rel="stylesheet" href="js/fancybox/dist/jquery.fancybox.min.css" />
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+    <script src="js/fancybox/dist/jquery.fancybox.min.js"></script>
   </head>
   <body>
     <div class="wrapper" id="main">
@@ -75,11 +72,12 @@
       <section id="gallery" class="gallery">
         <h2 class="gallery__heading">Галерея</h2>
         <ul class="gallery__list">
-          <li class="gallery__item gallery__item--1">
+          <li class="gallery__item">
             <a
               class="gallery__link"
               data-fancybox="gallery"
               data-date="Январь 2016"
+              data-title="Куропатка зимой"
               href="img/1.jpg"
             >
               <picture>
@@ -87,7 +85,6 @@
                 <img
                   class="gallery__thumbnail"
                   src="img/1tmb.jpg"
-                  data-lazy="img/1tmb.jpg"
                   width="480"
                   height="391"
                   alt="Куропатка зимой"
@@ -95,11 +92,12 @@
               </picture>
             </a>
           </li>
-          <li class="gallery__item gallery__item--2">
+          <li class="gallery__item">
             <a
               class="gallery__link"
               data-fancybox="gallery"
               data-date="Июнь 2017"
+              data-title="Камчатскй бурый медведь"
               href="img/2.jpg"
             >
               <picture>
@@ -107,7 +105,6 @@
                 <img
                   class="gallery__thumbnail"
                   src="img/2tmb.jpg"
-                  data-lazy="img/2tmb.jpg"
                   width="480"
                   height="391"
                   alt="Камчатскй бурый медведь"
@@ -115,11 +112,12 @@
               </picture>
             </a>
           </li>
-          <li class="gallery__item gallery__item--3">
+          <li class="gallery__item">
             <a
               class="gallery__link"
               data-fancybox="gallery"
               data-date="Март 2016"
+              data-title="Орел на ветке дерева"
               href="img/3.jpg"
             >
               <picture>
@@ -127,7 +125,6 @@
                 <img
                   class="gallery__thumbnail"
                   src="img/3tmb.jpg"
-                  data-lazy="img/3tmb.jpg"
                   width="480"
                   height="391"
                   alt="Орел на ветке дерева"
@@ -135,11 +132,12 @@
               </picture>
             </a>
           </li>
-          <li class="gallery__item gallery__item--4">
+          <li class="gallery__item">
             <a
               class="gallery__link"
               data-fancybox="gallery"
               data-date="Апрель 2017"
+              data-title="Утки"
               href="img/4.jpg"
             >
               <picture>
@@ -147,7 +145,6 @@
                 <img
                   class="gallery__thumbnail"
                   src="img/4tmb.jpg"
-                  data-lazy="img/4tmb.jpg"
                   width="480"
                   height="391"
                   alt="Утки"
@@ -155,11 +152,12 @@
               </picture>
             </a>
           </li>
-          <li class="gallery__item gallery__item--5">
+          <li class="gallery__item">
             <a
               class="gallery__link"
               data-fancybox="gallery"
               data-date="Апрель 2018"
+              data-title="Снова утки"
               href="img/5.jpg"
             >
               <picture>
@@ -167,7 +165,6 @@
                 <img
                   class="gallery__thumbnail"
                   src="img/5tmb.jpg"
-                  data-lazy="img/5tmb.jpg"
                   width="480"
                   height="391"
                   alt="Снова утки"
@@ -175,11 +172,12 @@
               </picture>
             </a>
           </li>
-          <li class="gallery__item gallery__item--6">
+          <li class="gallery__item">
             <a
               class="gallery__link"
               data-fancybox="gallery"
               data-date="Август 2017"
+              data-title="Чечевица"
               href="img/6.jpg"
             >
               <picture>
@@ -187,7 +185,6 @@
                 <img
                   class="gallery__thumbnail"
                   src="img/6tmb.jpg"
-                  data-lazy="img/6tmb.jpg"
                   width="480"
                   height="391"
                   alt="Чечевица"
@@ -195,11 +192,12 @@
               </picture>
             </a>
           </li>
-          <li class="gallery__item gallery__item--7">
+          <li class="gallery__item">
             <a
               class="gallery__link"
               data-fancybox="gallery"
               data-date="Апрель 2017"
+              data-title="Опять утки"
               href="img/7.jpg"
             >
               <picture>
@@ -207,7 +205,6 @@
                 <img
                   class="gallery__thumbnail"
                   src="img/7tmb.jpg"
-                  data-lazy="img/7tmb.jpg"
                   width="480"
                   height="391"
                   alt="Опять утки"
@@ -215,11 +212,12 @@
               </picture>
             </a>
           </li>
-          <li class="gallery__item gallery__item--8">
+          <li class="gallery__item">
             <a
               class="gallery__link"
               data-fancybox="gallery"
               data-date="Июль 2018"
+              data-title="Бабочка"
               href="img/8.jpg"
             >
               <picture>
@@ -227,7 +225,6 @@
                 <img
                   class="gallery__thumbnail"
                   src="img/8tmb.jpg"
-                  data-lazy="img/8tmb.jpg"
                   width="480"
                   height="391"
                   alt="Бабочка"
@@ -235,11 +232,12 @@
               </picture>
             </a>
           </li>
-          <li class="gallery__item gallery__item--9">
+          <li class="gallery__item">
             <a
               class="gallery__link"
               data-fancybox="gallery"
               data-date="Апрель 2017"
+              data-title="Куропатка весной"
               href="img/9.jpg"
             >
               <picture>
@@ -247,7 +245,6 @@
                 <img
                   class="gallery__thumbnail"
                   src="img/9tmb.jpg"
-                  data-lazy="img/9tmb.jpg"
                   width="480"
                   height="391"
                   alt="Куропатка весной"
