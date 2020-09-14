@@ -5,6 +5,14 @@
   position: relative;
   @include flex();
   justify-content: center;
+
+  @include mobile-to-tablet {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  @include media-mobile {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
 }
 
 .main-nav__list {

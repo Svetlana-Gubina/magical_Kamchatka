@@ -1,8 +1,8 @@
 .slider__preview-flex {
   max-width: 100%;
   position: absolute;
-  bottom: 20px;
-  left: 20px;
+  top: calc(100% + 20px);
+  left: 0;
   z-index: 100;
   @include flex();
 }
@@ -140,4 +140,33 @@
 .slider__count-num,
 .slider__count-total {
   @include indent();
+}
+
+.button-previous,
+.button-next {
+  position: absolute;
+  width: 46px;
+  height: 46px;
+  background: #000000;
+  text-align: center;
+  line-height: 44px;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 50%;
+  font-size: 18px;
+}
+
+.button-previous,
+.button-next {
+  top: 50%;
+  margin-top: -22px;
+  line-height: 42px;
+}
+
+.button-previous {
+  left: -55px;
+}
+
+.button-next {
+  right: -55px;
 }

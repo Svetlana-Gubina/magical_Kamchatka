@@ -15,9 +15,11 @@
 
   @include mobile-to-tablet {
     flex-direction: column;
+    mix-blend-mode: unset;
   }
 
   @include media-mobile {
     flex-direction: column;
+    mix-blend-mode: unset;
   }
 }
