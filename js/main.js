@@ -34,6 +34,7 @@
 
 $(document).ready(function () {
   $('[data-fancybox="gallery"]').fancybox({
+    height: 700,
     protect: true,
     loop: true,
     infobar: false,
@@ -64,10 +65,13 @@ $(document).ready(function () {
         );
       }
 
-      const btn = current.$slide.find(".slider__slide-cancel")[0];
-      btn.addEventListener("click", function (evt) {
+      $(document).on("click", ".slider__slide-cancel", function (evt) {
         evt.preventDefault();
-        this.closest(".slider__slide-title").classList.add("hidden");
+        this.closest(".slider__preview-flex").classList.add("highlighted");
+        current.$content.find(".slider__preview-flex").remove();
+        current.$content.append(
+          '<a data-fancybox-next class="button-next" href="javascript:;">→</a><a data-fancybox-previous class="button-previous" href="javascript:;">←</a>'
+        );
       });
     },
   });
