@@ -13,6 +13,7 @@
 
   @media (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
     background-image: url("../img/map_of_Russia@2x.png");
+    background-size: 80% 80%;
   }
 
   &::after {
@@ -24,11 +25,6 @@
     height: 274px;
   }
 
-  @media (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
-    &::after {
-      content: url("../img/16@2x.png");
-    }
-  }
 
   @include media-max-tablet {
     padding-top: 80px;
