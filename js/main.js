@@ -33,16 +33,22 @@
 // fancybox
 
 $(document).ready(function () {
+  const gallery = document.querySelector(".gallery");
+
   $('[data-fancybox="gallery"]').fancybox({
     height: 700,
     protect: true,
     loop: true,
     infobar: false,
     arrows: false,
+    onInit: function () {
+      gallery.classList.remove("active");
+    },
     afterLoad: function (instance, current) {
-      if (instance.group.length > 1 && current.$content) {
-        current.$content.append(
-          `<div class="slider__preview-flex">
+      if (!gallery.classList.contains("active")) {
+        if (instance.group.length > 1 && current.$content) {
+          current.$content.append(
+            `<div class="slider__preview-flex">
         <div class="slider__slide-title" data-title>
           <p class="slider__slide-text">${
             current.opts.$orig[0].dataset.title
@@ -57,22 +63,27 @@ $(document).ready(function () {
           <span class="slider__count"><span class="slider__count-num" data-fancybox-index>${
             current.opts.index + 1
           }</span> из <span data-fancybox-count class="slider__count-total">${
-            instance.group.length
-          }</span></span>
+              instance.group.length
+            }</span></span>
           <a data-fancybox-next class="slider__next" href="javascript:;">Следующий</a>
         </div>
       </div>`
+          );
+        }
+
+        $(document).on("click", ".slider__slide-cancel", function (evt) {
+          evt.preventDefault();
+          gallery.classList.add("active");
+          current.$content.find(".slider__preview-flex").remove();
+          current.$content.append(
+            '<a data-fancybox-next class="button-next" href="javascript:;"></a><a data-fancybox-prev class="button-previous" href="javascript:;"></a>'
+          );
+        });
+      } else {
+        current.$content.append(
+          '<a data-fancybox-next class="button-next" href="javascript:;"></a><a data-fancybox-prev class="button-previous" href="javascript:;"></a>'
         );
       }
-
-      $(document).on("click", ".slider__slide-cancel", function (evt) {
-        evt.preventDefault();
-        this.closest(".slider__preview-flex").classList.add("highlighted");
-        current.$content.find(".slider__preview-flex").remove();
-        current.$content.append(
-          '<a data-fancybox-next class="button-next" href="javascript:;">→</a><a data-fancybox-previous class="button-previous" href="javascript:;">←</a>'
-        );
-      });
     },
   });
 });
